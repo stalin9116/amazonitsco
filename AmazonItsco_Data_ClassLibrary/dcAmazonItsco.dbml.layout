@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 17.125, 15.25" name="dcAmazonItsco">
+  <DataContextMoniker Name="/dcAmazonItscoDataContext" />
+  <nestedChildShapes>
+    <classShape Id="19982053-7593-47cf-a9ea-b6cb04885892" absoluteBounds="9.375, 12.375, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/dcAmazonItscoDataContext/Categoria" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f8030328-5cc5-4302-8626-ff648781671e" absoluteBounds="9.39, 12.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2d1d5c9e-ce26-4870-b56c-08575eb100e7" absoluteBounds="9.125, 0.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/dcAmazonItscoDataContext/TipoPago" />
+      <nestedChildShapes>
+        <elementListCompartment Id="582ac4c3-916d-4fde-8b81-58d3ed1be985" absoluteBounds="9.14, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d2657e44-9caf-4261-9ec9-927a04774dd7" absoluteBounds="14.875, 4.375, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/dcAmazonItscoDataContext/DetalleOrden" />
+      <nestedChildShapes>
+        <elementListCompartment Id="67394d26-cc1c-44d7-baf5-4cfe239b9132" absoluteBounds="14.89, 4.835, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1dd0dfe8-d530-4ad1-a706-6fc4345da8d5" absoluteBounds="5.5, 7.125, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/dcAmazonItscoDataContext/Direcciones" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2e0909ab-30ac-4c6b-8c2a-85dab28bea6e" absoluteBounds="5.5150000000000006, 7.585, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3ba72b1f-f621-443e-8937-43bb2974beb0" absoluteBounds="6.125, 0.5, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/dcAmazonItscoDataContext/Empresa" />
+      <nestedChildShapes>
+        <elementListCompartment Id="652e42e2-67f1-4c8c-8b30-ff37c0235e3c" absoluteBounds="6.1400000000000006, 0.96, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2c3c4c3e-6f7f-4799-9a63-03c1aef7d699" absoluteBounds="9.125, 3.75, 2, 5.4246240234374987">
+      <DataClassMoniker Name="/dcAmazonItscoDataContext/Orden" />
+      <nestedChildShapes>
+        <elementListCompartment Id="829482b7-3943-44a2-9647-e65fba8d802a" absoluteBounds="9.14, 4.21, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b19af44b-b124-47fb-8c13-7185cf90babe" absoluteBounds="11.875, 4.875, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/dcAmazonItscoDataContext/Pago" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eaa0614a-148a-42ef-9ba0-f77c4f1cd637" absoluteBounds="11.89, 5.335, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c57a2d5e-74c1-4b0e-87a4-ca032eb6ba85" absoluteBounds="2.125, 6.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dcAmazonItscoDataContext/Pais" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1a6e78d9-b0dc-401c-9ad1-cee8807af931" absoluteBounds="2.14, 6.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4694841b-0ae8-40c0-8f1b-fab49afbf9ec" absoluteBounds="3.625, 1, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/dcAmazonItscoDataContext/Persona" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5a117a5e-f7f2-4764-b658-7ab5ef662140" absoluteBounds="3.64, 1.46, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e85f16b7-fa39-4f79-adcc-ef03920d4869" absoluteBounds="12.125, 11.875, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/dcAmazonItscoDataContext/Producto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9dd22367-e585-4bf6-a259-346d0bb2f9f6" absoluteBounds="12.14, 12.335, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.125 : 4.59375); (12.7916666666667 : 4.59375 : JumpStart); (12.9583333333333 : 4.59375 : JumpEnd); (14.875 : 4.59375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcAmazonItscoDataContext/Orden/Orden_DetalleOrden" />
+      <nodes>
+        <classShapeMoniker Id="2c3c4c3e-6f7f-4799-9a63-03c1aef7d699" />
+        <classShapeMoniker Id="d2657e44-9caf-4261-9ec9-927a04774dd7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.84375 : 3.80930826822917); (7.84375 : 5.43590463411458); (9.125 : 5.43590463411458)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcAmazonItscoDataContext/Empresa/Empresa_Orden" />
+      <nodes>
+        <classShapeMoniker Id="3ba72b1f-f621-443e-8937-43bb2974beb0" />
+        <classShapeMoniker Id="2c3c4c3e-6f7f-4799-9a63-03c1aef7d699" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.5 : 8.14981201171875); (9.125 : 8.14981201171875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcAmazonItscoDataContext/Direcciones/Direcciones_Orden" />
+      <nodes>
+        <classShapeMoniker Id="1dd0dfe8-d530-4ad1-a706-6fc4345da8d5" />
+        <classShapeMoniker Id="2c3c4c3e-6f7f-4799-9a63-03c1aef7d699" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.125 : 1.44314697265625); (12.875 : 1.44314697265625); (12.875 : 4.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcAmazonItscoDataContext/TipoPago/TipoPago_Pago" />
+      <nodes>
+        <classShapeMoniker Id="2d1d5c9e-ce26-4870-b56c-08575eb100e7" />
+        <classShapeMoniker Id="b19af44b-b124-47fb-8c13-7185cf90babe" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.125 : 6.43350341796875); (11.875 : 6.43350341796875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcAmazonItscoDataContext/Orden/Orden_Pago" />
+      <nodes>
+        <classShapeMoniker Id="2c3c4c3e-6f7f-4799-9a63-03c1aef7d699" />
+        <classShapeMoniker Id="b19af44b-b124-47fb-8c13-7185cf90babe" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.125 : 7.60179768880208); (4.72916416666667 : 7.60179768880208 : JumpStart); (4.89583083333333 : 7.60179768880208 : JumpEnd); (5.5 : 7.60179768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcAmazonItscoDataContext/Pais/Pais_Direcciones" />
+      <nodes>
+        <classShapeMoniker Id="c57a2d5e-74c1-4b0e-87a4-ca032eb6ba85" />
+        <classShapeMoniker Id="1dd0dfe8-d530-4ad1-a706-6fc4345da8d5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.8124975 : 3.92470540364583); (4.8124975 : 9.19155110677083); (5.5 : 9.19155110677083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcAmazonItscoDataContext/Persona/Persona_Direcciones" />
+      <nodes>
+        <classShapeMoniker Id="4694841b-0ae8-40c0-8f1b-fab49afbf9ec" />
+        <classShapeMoniker Id="1dd0dfe8-d530-4ad1-a706-6fc4345da8d5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.03125 : 11.875); (14.03125 : 8.25401041666667); (14.875 : 8.25401041666667)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcAmazonItscoDataContext/Producto/Producto_DetalleOrden" />
+      <nodes>
+        <classShapeMoniker Id="e85f16b7-fa39-4f79-adcc-ef03920d4869" />
+        <classShapeMoniker Id="d2657e44-9caf-4261-9ec9-927a04774dd7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.375 : 13.4527498372396); (12.125 : 13.4527498372396)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcAmazonItscoDataContext/Categoria/Categoria_Producto" />
+      <nodes>
+        <classShapeMoniker Id="19982053-7593-47cf-a9ea-b6cb04885892" />
+        <classShapeMoniker Id="e85f16b7-fa39-4f79-adcc-ef03920d4869" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

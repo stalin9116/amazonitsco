@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DBAmazonItsco" Class="dcAmazonItscoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.0.5;Initial Catalog=DBAmazonItsco;User ID=it" SettingsObjectName="AmazonItsco_Data_ClassLibrary.Properties.Settings" SettingsPropertyName="DBAmazonItscoConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Categoria" Member="Categoria">
+    <Type Name="Categoria">
+      <Column Name="cat_id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cat_descripcion" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="cat_detalle" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="cat_status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="cat_add" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="cat_edit" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cat_delete" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Categoria_Producto" Member="Producto" ThisKey="cat_id" OtherKey="cat_id" Type="Producto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TipoPago" Member="TipoPago">
+    <Type Name="TipoPago">
+      <Column Name="tpa_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tpa_descripcion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="tpa_status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Association Name="TipoPago_Pago" Member="Pago" ThisKey="tpa_id" OtherKey="tpa_id" Type="Pago" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DetalleOrden" Member="DetalleOrden">
+    <Type Name="DetalleOrden">
+      <Column Name="det_id" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="det_seq" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="pro_codigo" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="det_cantidad" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="det_descripcion" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="det_preciounitario" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="det_descuento" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="det_impuesto" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="det_valortotal" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="det_status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="det_add" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="det_edit" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="det_delete" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ord_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ord_fecha" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ord_numero" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pro_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Orden_DetalleOrden" Member="Orden" ThisKey="ord_id,ord_fecha,ord_numero" OtherKey="ord_id,ord_fecha,ord_numero" Type="Orden" IsForeignKey="true" />
+      <Association Name="Producto_DetalleOrden" Member="Producto" ThisKey="pro_id" OtherKey="pro_id" Type="Producto" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Direcciones" Member="Direcciones">
+    <Type Name="Direcciones">
+      <Column Name="dir_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="dir_calleprincipal" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="dir_callesecundaria" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="dir_numero" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="dir_telefono" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="dir_codigopostal" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="dir_ciudad" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="dir_estado" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="dir_referencia" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="per_id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="per_dni" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pai_id" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Association Name="Direcciones_Orden" Member="Orden" ThisKey="dir_id,per_id,per_dni" OtherKey="dir_id,per_id,per_dni" Type="Orden" />
+      <Association Name="Pais_Direcciones" Member="Pais" ThisKey="pai_id" OtherKey="pai_id" Type="Pais" IsForeignKey="true" />
+      <Association Name="Persona_Direcciones" Member="Persona" ThisKey="per_id,per_dni" OtherKey="per_id,per_dni" Type="Persona" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Empresa" Member="Empresa">
+    <Type Name="Empresa">
+      <Column Name="emp_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="emp_ruc" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="emp_razonsocial" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="emp_comercial" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="emp_representantelegal" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="emp_email" Type="System.String" DbType="NVarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="emp_telefono" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="emp_contribuyente" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="emp_dirmatriz" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="emp_status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="emp_add" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="emp_edit" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="emp_delete" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Empresa_Orden" Member="Orden" ThisKey="emp_id,emp_ruc" OtherKey="emp_id,emp_ruc" Type="Orden" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Orden" Member="Orden">
+    <Type Name="Orden">
+      <Column Name="ord_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ord_fecha" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ord_numero" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ord_apellidos" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="ord_nombres" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ord_telefono" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ord_direccion" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="ord_dni" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ord_tipodni" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="ord_descuento" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="ord_subtotal0" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="ord_subtotalimpuesto" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="ord_impuestocero" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="ord_impuesto" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="ord_total" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="ord_status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="ord_add" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ord_edit" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ord_delete" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dir_id" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="per_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="per_dni" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="emp_id" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="emp_ruc" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="Orden_DetalleOrden" Member="DetalleOrden" ThisKey="ord_id,ord_fecha,ord_numero" OtherKey="ord_id,ord_fecha,ord_numero" Type="DetalleOrden" />
+      <Association Name="Orden_Pago" Member="Pago" ThisKey="ord_id,ord_fecha,ord_numero" OtherKey="ord_id,ord_fecha,ord_numero" Type="Pago" />
+      <Association Name="Empresa_Orden" Member="Empresa" ThisKey="emp_id,emp_ruc" OtherKey="emp_id,emp_ruc" Type="Empresa" IsForeignKey="true" />
+      <Association Name="Direcciones_Orden" Member="Direcciones" ThisKey="dir_id,per_id,per_dni" OtherKey="dir_id,per_id,per_dni" Type="Direcciones" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pago" Member="Pago">
+    <Type Name="Pago">
+      <Column Name="pag_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pag_fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="pag_valor" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="pag_status" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="pag_transaccion" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="pag_add" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="pag_edit" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="pag_delete" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="tpa_id" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ord_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ord_fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ord_numero" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Association Name="TipoPago_Pago" Member="TipoPago" ThisKey="tpa_id" OtherKey="tpa_id" Type="TipoPago" IsForeignKey="true" />
+      <Association Name="Orden_Pago" Member="Orden" ThisKey="ord_id,ord_fecha,ord_numero" OtherKey="ord_id,ord_fecha,ord_numero" Type="Orden" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pais" Member="Pais">
+    <Type Name="Pais">
+      <Column Name="pai_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pai_nombre" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="pai_prefijo" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="pai_status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Association Name="Pais_Direcciones" Member="Direcciones" ThisKey="pai_id" OtherKey="pai_id" Type="Direcciones" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Persona" Member="Persona">
+    <Type Name="Persona">
+      <Column Name="per_id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="per_dni" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="per_apellidos" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="per_nombres" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="per_tipodni" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="per_genero" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="per_fechanacimiento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="per_status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="per_add" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="per_edit" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="per_delete" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Persona_Direcciones" Member="Direcciones" ThisKey="per_id,per_dni" OtherKey="per_id,per_dni" Type="Direcciones" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Producto" Member="Producto">
+    <Type Name="Producto">
+      <Column Name="pro_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pro_codigo" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="pro_nombre" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="pro_descripcion" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="pro_peso" Type="System.Decimal" DbType="Decimal(8,2) NOT NULL" CanBeNull="false" />
+      <Column Name="pro_preciocompra" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="pro_precioventa" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="pro_status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="pro_add" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="pro_edit" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="pro_delete" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cat_id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Association Name="Producto_DetalleOrden" Member="DetalleOrden" ThisKey="pro_id" OtherKey="pro_id" Type="DetalleOrden" />
+      <Association Name="Categoria_Producto" Member="Categoria" ThisKey="cat_id" OtherKey="cat_id" Type="Categoria" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
